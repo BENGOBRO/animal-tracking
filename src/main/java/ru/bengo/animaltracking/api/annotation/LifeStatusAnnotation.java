@@ -1,7 +1,6 @@
 package ru.bengo.animaltracking.api.annotation;
 
 import jakarta.validation.Constraint;
-import jakarta.validation.Payload;
 import ru.bengo.animaltracking.api.annotation.validator.LifeStatusValidator;
 
 import java.lang.annotation.Documented;
@@ -17,9 +16,5 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 @Documented
 public @interface LifeStatusAnnotation {
-
     String message() default "{LifeStatus.invalid}";
-    Class<?>[] groups() default { };
-    Class<? extends Payload>[] payload() default { };
-
 }

@@ -1,7 +1,6 @@
 package ru.bengo.animaltracking.api.annotation;
 
 import jakarta.validation.Constraint;
-import jakarta.validation.Payload;
 import ru.bengo.animaltracking.api.annotation.validator.GenderValidator;
 
 import java.lang.annotation.Documented;
@@ -16,9 +15,5 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Constraint(validatedBy = GenderValidator.class)
 @Documented
 public @interface GenderAnnotation {
-
     String message() default "{Gender.invalid}";
-    Class<?>[] groups() default { };
-    Class<? extends Payload>[] payload() default { };
-
 }

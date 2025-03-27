@@ -1,7 +1,6 @@
 package ru.bengo.animaltracking.api.dto.mapper;
 
 import org.mapstruct.*;
-import org.mapstruct.factory.Mappers;
 import ru.bengo.animaltracking.api.dto.AnimalTypeDto;
 import ru.bengo.animaltracking.store.entity.AnimalType;
 

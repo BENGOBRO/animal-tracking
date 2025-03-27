@@ -11,7 +11,6 @@ import ru.bengo.animaltracking.api.dto.mapper.VisitedLocationMapper;
 import ru.bengo.animaltracking.service.VisitedLocationService;
 import ru.bengo.animaltracking.store.entity.VisitedLocation;
 
-import java.security.Principal;
 import java.util.Date;
 import java.util.List;
 

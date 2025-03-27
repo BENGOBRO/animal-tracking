@@ -27,7 +27,6 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                .csrf().disable()
                 .addFilterAfter(userAuthenticatedFilter, BasicAuthenticationFilter.class)
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers(
@@ -40,8 +39,7 @@ public class WebSecurityConfig {
                                 "/animals/types/**",
                                 "/locations/**")
                         .permitAll()
-                        .anyRequest().authenticated())
-                .httpBasic();
+                        .anyRequest().authenticated());
         return http.build();
     }
 }

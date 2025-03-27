@@ -83,7 +83,7 @@ public class AnimalServiceImpl implements AnimalService {
         var newChippingLocation = locationService.get(animalDto.getChippingLocationId());
         if (isAnimalHasVisitedLocations) {
 
-            var firstVisitedLocationId = animal.getVisitedLocations().get(0).getId();
+            var firstVisitedLocationId = animal.getVisitedLocations().getFirst().getId();
             var isNewChippingLocationIdEqualsFirstVisitedLocation =
                     firstVisitedLocationId.equals(newChippingLocation.getId());
             if (isNewChippingLocationIdEqualsFirstVisitedLocation) {
@@ -169,7 +169,7 @@ public class AnimalServiceImpl implements AnimalService {
         AnimalType animalType = animalTypeService.get(typeId);
         List<AnimalType> animalTypes = animal.getAnimalTypes();
 
-        var isLastAnimalType = animalTypes.size() == 1 && animalTypes.get(0).equals(animalType);
+        var isLastAnimalType = animalTypes.size() == 1 && animalTypes.getFirst().equals(animalType);
         if (isLastAnimalType) {
             throw new BadRequestException(Message.LAST_ANIMAL_TYPE.getInfo());
         }

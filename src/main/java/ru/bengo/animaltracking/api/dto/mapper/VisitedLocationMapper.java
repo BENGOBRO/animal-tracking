@@ -18,10 +18,6 @@ public class VisitedLocationMapper {
         return modelMapper.map(visitedLocation, VisitedLocationDto.class);
     }
 
-    public VisitedLocation toEntity(VisitedLocationDto visitedLocationDto) {
-        return modelMapper.map(visitedLocationDto, VisitedLocation.class);
-    }
-
     @PostConstruct
     public void setupMapper() {
         TypeMap<VisitedLocation, VisitedLocationDto> propertyMapperAnimalLocation = modelMapper.createTypeMap(VisitedLocation.class, VisitedLocationDto.class);

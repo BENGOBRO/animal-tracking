@@ -81,13 +81,12 @@ public class VisitedLocationServiceImpl implements VisitedLocationService {
         if (newLocation.equals(animal.getChippingLocation())) {
             throw new BadRequestException(Message.CHIPPING_LOCATION_IS_VISITED_LOCATION.getInfo());
         }
-        if (visitedLocations.get(0).equals(visitedLocation) && newLocation.equals(animal.getChippingLocation())) {
+        if (visitedLocations.getFirst().equals(visitedLocation) && newLocation.equals(animal.getChippingLocation())) {
             throw new NotFoundException(Message.FIRST_VISITED_POINT_TO_CHIPPING_POINT.getInfo());
         }
         if (visitedLocation.getLocation().equals(newLocation)) {
             throw new BadRequestException(Message.SAME_POINT.getInfo());
         }
-        //if ()
 
         visitedLocation.setLocation(newLocation);
         return visitedLocationRepository.save(visitedLocation);
@@ -114,8 +113,4 @@ public class VisitedLocationServiceImpl implements VisitedLocationService {
                 .animal(animal)
                 .build();
     }
-
-//    private boolean isNeighbour() {
-//
-//    }
 }
